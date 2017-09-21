@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+	<useStyles filename="nifty-default-styles.xml" />
+	<useControls filename="nifty-default-controls.xml" />
+
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+<!-- Studieren-Screen -->
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<screen id="stud" controller="graphics.gui.InitScreen">
+		<layer id="hintergrundLayer" childLayout="center">
+			<panel id="hintergrund" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/Hintergrund.png" childLayout="center"
+				visible="true">
+			</panel>
+
+			<panel id="deko" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/DekoStudierenV2.png" childLayout="center" visible="true">
+			</panel>
+		</layer>
+
+		<layer id="menueActive" childLayout="absolute">
+			<panel id="menuePanel" height="78px" width="244px" x="388px"
+				y="625px" backgroundImage="res/img/MenueStudierenV1s.png" childLayout="center"
+				visibleToMouse="false" visible="true">
+				<effect>
+					<onShow name="fade" length="200" start="#00" end="#ff"
+						targetElement="menuePanel" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="menuePanel" />
+				</effect>
+			</panel>
+		</layer>
+		
+		<layer id="touchElements" childLayout="absolute">
+			<panel height="50px" width="250px" x="390px" y="250px"
+					backgroundImage="res/img/studiengaenge.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" id="PresseButtonOff" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="goToFachrichtungen1()"/>
+            	</control>
+			</panel>
+				
+			<panel height="50px" width="250px" x="390px" y="350px"
+					backgroundImage="res/img/studienberatung.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          				visibleToMouse="true" childLayout="center">
+            			<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+				
+			<panel height="50px" width="250px" x="390px" y="450px"
+					backgroundImage="res/img/personen.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label"  width="100%" height="100%" align="center" valign="center" 
+          				visibleToMouse="true" childLayout="center">
+            			<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+		</layer>
+	</screen>
+	
+	
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+<!-- Fachrichtungen-Seite 1 -->
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<screen id="fachrichtungen1" controller="graphics.gui.InitScreen">
+		<layer id="hintergrundLayer" childLayout="center">
+			<panel id="hintergrund" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/Hintergrund.png" childLayout="center"
+				visible="true">
+			</panel>
+		</layer>
+
+		<layer id="menueActive" childLayout="absolute">
+			<panel id="menuePanel" height="78px" width="244px" x="388px"
+				y="625px" backgroundImage="res/img/MenueStudierenV1s.png" childLayout="center"
+				visibleToMouse="false" visible="true">
+				<effect>
+					<onShow name="fade" length="200" start="#00" end="#ff"
+						targetElement="menuePanel" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="menuePanel" />
+				</effect>
+			</panel>
+		</layer>
+
+		<layer id="coinPlaces" childLayout="absolute">
+			<panel id="menueCoin" height="80px" width="80px" x="473px" y="680px"
+				backgroundImage="res/img/leer.png" visible="true"
+				childLayout="center">
+			</panel>
+			
+			<panel id="infoPanel" height="70%" width="55%" x="35%" y="10%"
+				backgroundImage="res/img/InfoPanelSchatten.png" childLayout="center"
+				visibleToMouse="true" visible="false">
+				<effect>
+					<onShow name="fade" length="400" start="#00" end="#ff"
+						targetElement="infoPanel" />
+					<onShow name="move" mode="in" direction="right" length="300"
+						startDelay="0" inherit="true" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="infoPanel" />
+					<onHide name="move" mode="out" direction="right" length="300"
+						startDelay="0" inherit="true" />
+				</effect>
+				
+				<text id="infoText" style="nifty-label" text="" 
+						     align="left" valign="top" />
+			</panel>
+		</layer>
+		
+		<!-- ++++++++++++++++  Hintergrundbilder  +++++++++++++++++++++++ -->
+		<layer id="pics" childLayout="absolute">
+			
+			<!--Energietechnik -->
+			<panel height="2px" width="750px" x="135px" y="148px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			<panel height="130px" width="750px" x="135px" y="150px"
+					backgroundImage="res/img/energietechc.jpg" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			<panel height="2px" width="750px" x="135px" y="280px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			
+			<!-- Biomed. Techn. -->
+			<panel height="2px" width="750px" x="135px" y="298px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			<panel height="130px" width="750px" x="135px" y="300px"
+					backgroundImage="res/img/biomed2c.jpg" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			<panel height="2px" width="750px" x="135px" y="430px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			
+			<!-- Techn. Management -->
+			<panel height="2px" width="750px" x="135px" y="448px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			<panel height="130px" width="750px" x="135px" y="450px"
+					backgroundImage="res/img/techmarketc.jpg" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			<panel height="2px" width="750px" x="135px" y="580px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+		</layer>
+		
+		
+		<!-- ++++++++++++++++  Texte zu den Hintergründen  +++++++++++++++++++++++ -->
+		<layer id="touchElements" childLayout="absolute">
+			
+			<!--Energietechnik -->
+			<panel height="60px" width="300px" x="150px" y="190px"
+					backgroundImage="res/img/EnergieTech.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+				
+			<!-- Biomed. Techn. -->
+			<panel height="60px" width="300px" x="150px" y="340px"
+					backgroundImage="res/img/BioMed.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          				visibleToMouse="true" childLayout="center">
+            			<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			
+			<!-- Techn. Management -->	
+			<panel height="60px" width="300px" x="150px" y="490px"
+					backgroundImage="res/img/TechMarkt.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          				visibleToMouse="true" childLayout="center">
+            			<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			
+			<!-- Zurück -->
+			<panel height="36px" width="53px" x="300px" y="620px"
+				backgroundImage="res/img/PfeileLi.png" visible="true" childLayout="center">
+				<control name="label" label="Start" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="goToStudieren()"/>
+            	</control>
+			</panel>
+			
+			<!-- Weiter -->
+			<panel height="36px" width="53px" x="660px" y="620px"
+				backgroundImage="res/img/PfeileRe.png" visible="true" childLayout="center">
+				<control name="label" label="Start" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="goToFachrichtungen2()"/>
+            	</control>
+			</panel>
+			
+			<panel id="deko" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/DekoStudierenV2.png" childLayout="center" visible="true">
+			</panel>
+		</layer>
+	</screen>
+	
+	
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+<!-- Fachrichtungen-Seite 2 -->
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<screen id="fachrichtungen2" controller="graphics.gui.InitScreen">
+		<layer id="hintergrundLayer" childLayout="center">
+			<panel id="hintergrund" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/Hintergrund.png" childLayout="center"
+				visible="true">
+			</panel>
+		</layer>
+
+		<layer id="menueActive" childLayout="absolute">
+			<panel id="menuePanel" height="78px" width="244px" x="388px"
+				y="625px" backgroundImage="res/img/MenueStudierenV1s.png" childLayout="center"
+				visibleToMouse="false" visible="true">
+				<effect>
+					<onShow name="fade" length="200" start="#00" end="#ff"
+						targetElement="menuePanel" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="menuePanel" />
+				</effect>
+			</panel>
+		</layer>
+
+		<layer id="coinPlaces" childLayout="absolute">
+			<panel id="menueCoin" height="80px" width="80px" x="473px" y="680px"
+				backgroundImage="res/img/leer.png" visible="true"
+				childLayout="center">
+			</panel>
+			
+			<panel id="infoPanel" height="60%" width="55%" x="35%" y="20%"
+				backgroundImage="res/img/InfoPanelSchatten.png" childLayout="center"
+				visibleToMouse="true" visible="false">
+				<effect>
+					<onShow name="fade" length="400" start="#00" end="#ff"
+						targetElement="infoPanel" />
+					<onShow name="move" mode="in" direction="right" length="300"
+						startDelay="0" inherit="true" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="infoPanel" />
+					<onHide name="move" mode="out" direction="right" length="300"
+						startDelay="0" inherit="true" />
+				</effect>
+				
+				<text id="infoText" style="nifty-label" text="" 
+						     align="left" valign="top" />
+			</panel>
+		</layer>
+		
+		<!-- ++++++++++++++++  Hintergrundbilder  +++++++++++++++++++++++ -->
+		<layer id="pics" childLayout="absolute">
+			
+			<!-- Intelligent System Design -->
+			<panel height="2px" width="750px" x="135px" y="148px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			<panel height="130px" width="750px" x="135px" y="150px"
+					backgroundImage="res/img/systemdesc.jpg" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			<panel height="2px" width="750px" x="135px" y="280px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			
+			<!-- Mechatronik -->
+			<panel height="2px" width="750px" x="135px" y="298px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			<panel height="130px" width="750px" x="135px" y="300px"
+					backgroundImage="res/img/mechatrc.jpg" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			<panel height="2px" width="750px" x="135px" y="430px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			
+			<!-- Wirtschaftsingenieurwesen -->
+			<panel height="2px" width="750px" x="135px" y="448px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			<panel height="130px" width="750px" x="135px" y="450px"
+					backgroundImage="res/img/wirting.jpg" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			<panel height="2px" width="750px" x="135px" y="580px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+		</layer>
+		
+		
+		<!-- ++++++++++++++++  Texte zu den Hintergründen  +++++++++++++++++++++++ -->
+		<layer id="touchElements" childLayout="absolute">
+			
+			<!-- Intelligent System Design -->
+			<panel height="60px" width="300px" x="150px" y="190px"
+					backgroundImage="res/img/SysDesign.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+				
+			<!-- Mechatronik -->
+			<panel height="60px" width="300px" x="150px" y="340px"
+					backgroundImage="res/img/Mechatronik.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          				visibleToMouse="true" childLayout="center">
+            			<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+				
+			<!-- Wirtschaftsingenieurwesen -->
+			<panel height="60px" width="300px" x="150px" y="490px"
+					backgroundImage="res/img/WirtIng.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          				visibleToMouse="true" childLayout="center">
+            			<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			
+			
+			<!-- Zurück -->
+			<panel height="36px" width="53px" x="300px" y="620px"
+				backgroundImage="res/img/PfeileLi.png" visible="true" childLayout="center">
+				<control name="label" label="Start" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="goToFachrichtungen1()"/>
+            	</control>
+			</panel>
+			
+			<!-- Weiter -->
+			<panel height="36px" width="53px" x="660px" y="620px"
+				backgroundImage="res/img/PfeileRe.png" visible="true" childLayout="center">
+				<control name="label" label="Start" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="goToFachrichtungen3()"/>
+            	</control>
+			</panel>
+			
+			<panel id="deko" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/DekoStudierenV2.png" childLayout="center" visible="true">
+			</panel>
+		</layer>
+	</screen>
+	
+	
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+<!-- Fachrichtungen-Seite 3 -->
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<screen id="fachrichtungen3" controller="graphics.gui.InitScreen">
+		<layer id="hintergrundLayer" childLayout="center">
+			<panel id="hintergrund" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/Hintergrund.png" childLayout="center"
+				visible="true">
+			</panel>
+		</layer>
+
+		<layer id="menueActive" childLayout="absolute">
+			<panel id="menuePanel" height="78px" width="244px" x="388px"
+				y="625px" backgroundImage="res/img/MenueStudierenV1s.png" childLayout="center"
+				visibleToMouse="false" visible="true">
+				<effect>
+					<onShow name="fade" length="200" start="#00" end="#ff"
+						targetElement="menuePanel" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="menuePanel" />
+				</effect>
+			</panel>
+		</layer>
+
+		<layer id="coinPlaces" childLayout="absolute">
+			<panel id="menueCoin" height="80px" width="80px" x="473px" y="680px"
+				backgroundImage="res/img/leer.png" visible="true"
+				childLayout="center">
+			</panel>
+			
+			<panel id="infoPanel" height="70%" width="55%" x="35%" y="10%"
+				backgroundImage="res/img/InfoPanelSchatten.png" childLayout="center"
+				visibleToMouse="true" visible="false">
+				<effect>
+					<onShow name="fade" length="400" start="#00" end="#ff"
+						targetElement="infoPanel" />
+					<onShow name="move" mode="in" direction="right" length="300"
+						startDelay="0" inherit="true" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="infoPanel" />
+					<onHide name="move" mode="out" direction="right" length="300"
+						startDelay="0" inherit="true" />
+				</effect>
+				
+				<text id="infoText" style="nifty-label" text="" 
+						     align="left" valign="top" />
+			</panel>
+		</layer>
+		
+		<!-- ++++++++++++++++  Hintergrundbilder  +++++++++++++++++++++++ -->
+		<layer id="pics" childLayout="absolute">
+			
+			<!-- Computervisualistik -->
+			<panel height="2px" width="750px" x="135px" y="148px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			<panel height="130px" width="750px" x="135px" y="150px"
+					backgroundImage="res/img/cvdc.jpg" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="goToCvd1()" />
+            	</control>
+			</panel>
+			<panel height="2px" width="750px" x="135px" y="280px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			
+			<!-- Materialdesign -->
+			<panel height="2px" width="750px" x="135px" y="298px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			<panel height="130px" width="750px" x="135px" y="300px"
+					backgroundImage="res/img/matdesc.jpg" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+			<panel height="2px" width="750px" x="135px" y="430px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+		</layer>
+		
+		
+		<!-- ++++++++++++++++  Texte zu den Hintergründen  +++++++++++++++++++++++ -->
+		<layer id="touchElements" childLayout="absolute">
+			<!-- Computervisualistik -->
+			<panel height="60px" width="300px" x="150px" y="190px"
+					backgroundImage="res/img/CVD.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="goToCvd1()"/>
+            	</control>
+			</panel>
+			
+			<!-- Materialdesign -->	
+			<panel height="60px" width="300px" x="150px" y="340px"
+					backgroundImage="res/img/Matdes.png" visible="true" visibleToMouse="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          				visibleToMouse="true" childLayout="center">
+            			<interact onClick="setPresseTxt()"/>
+            	</control>
+			</panel>
+				
+			<!-- Zurück -->	
+			<panel height="36px" width="53px" x="300px" y="620px"
+				backgroundImage="res/img/PfeileLi.png" visible="true" childLayout="center">
+				<control name="label" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="goToFachrichtungen2()"/>
+            	</control>
+			</panel>
+			
+			<panel id="deko" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/DekoStudierenV2.png" childLayout="center" visible="true">
+			</panel>
+		</layer>
+	</screen>
+</nifty>

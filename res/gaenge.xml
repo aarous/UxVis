@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+	<useStyles filename="nifty-default-styles.xml" />
+	<useControls filename="nifty-default-controls.xml" />	
+	
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+<!-- CVD Seite 1 -->
+<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<screen id="visualistik1" controller="graphics.gui.InitScreen">
+	
+		<layer id="hintergrundLayer" childLayout="center">
+			<panel id="hintergrund" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/Hintergrund.png" childLayout="center"
+				visible="true">
+			</panel>
+		</layer>
+
+		<layer id="menueActive" childLayout="absolute">
+			<panel id="menuePanel" height="78px" width="244px" x="388px"
+				y="625px" backgroundImage="res/img/MenueStudierenV1s.png" childLayout="center"
+				visibleToMouse="false" visible="true">
+				<effect>
+					<onShow name="fade" length="200" start="#00" end="#ff"
+						targetElement="menuePanel" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="menuePanel" />
+				</effect>
+			</panel>
+		</layer>
+
+		<layer id="coinPlaces" childLayout="absolute">
+			<panel id="menueCoin" height="80px" width="80px" x="473px" y="680px"
+				backgroundImage="res/img/leer.png" visible="true"
+				childLayout="center">
+			</panel>
+			
+			<panel id="infoPanel" height="70%" width="55%" x="35%" y="10%"
+				backgroundImage="res/img/InfoPanelSchatten.png" childLayout="center"
+				visibleToMouse="true" visible="false">
+				<effect>
+					<onShow name="fade" length="400" start="#00" end="#ff"
+						targetElement="infoPanel" />
+					<onShow name="move" mode="in" direction="right" length="300"
+						startDelay="0" inherit="true" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="infoPanel" />
+					<onHide name="move" mode="out" direction="right" length="300"
+						startDelay="0" inherit="true" />
+				</effect>
+				
+				<text id="infoText" style="nifty-label" text="" 
+						     align="left" valign="top" />
+			</panel>
+		</layer>
+		
+		<!-- ++++++++++++++++  Hintergrundbild  +++++++++++++++++++++++ -->
+		<layer id="banner" childLayout="absolute">
+			
+			<!-- Banner -->
+			<panel height="2px" width="750px" x="85px" y="78px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+			<panel height="130px" width="750px" x="85px" y="80px"
+					backgroundImage="res/img/CVD.jpg" visible="true">
+			</panel>
+			<panel height="2px" width="750px" x="85px" y="210px"
+					backgroundImage="res/img/StreifenWeiss.png" visible="true" visibleToMouse="false">
+			</panel>
+		</layer>
+		
+		
+		<!-- ++++++++++++++++  Texte zu den Hintergründen  +++++++++++++++++++++++ -->
+		<layer id="touchElements" childLayout="absolute">
+			
+			<!--CVD-Text -->
+			<!-- Computervisualistik -->
+			<panel height="60px" width="300px" x="210px" y="110px"
+					backgroundImage="res/img/CVD.png" visible="true" visibleToMouse="true" childLayout="center">
+			</panel>
+			
+			<panel id="inhaltPanel" height="510px" width="350px" x="100px" y="300px"
+				backgroundImage="res/img/leer.png" childLayout="center"
+				visibleToMouse="false" visible="true">
+				<effect>
+					<onShow name="fade" length="400" start="#00" end="#ff"
+						targetElement="infoPanel" />
+					<onShow name="move" mode="in" direction="right" length="300"
+						startDelay="0" inherit="true" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="infoPanel" />
+					<onHide name="move" mode="out" direction="right" length="300"
+						startDelay="0" inherit="true" />
+				</effect>
+				
+				<text id="infoText" style="nifty-label" text="" width="90%" height="80%" x="0%" y="30%"
+						     align="center" valign="top" visible="true" wrap="true" />
+			</panel>
+			
+			<!-- Zurück -->
+			<panel height="36px" width="53px" x="300px" y="620px"
+				backgroundImage="res/img/PfeileLi.png" visible="true" childLayout="center">
+				<control name="label" label="Start" width="100%" height="100%" align="center" valign="center" 
+          			visibleToMouse="true" childLayout="center">
+            		<interact onClick="goToFachrichtungen3()"/>
+            	</control>
+			</panel>
+			
+			<panel id="infoCoin" height="80px" width="80px" x="160px" y="350px"
+				backgroundImage="res/img/InfoCoinPlatz.png" visible="true"
+				childLayout="center">
+			</panel>
+			
+			<panel id="infoPanel" height="20%" width="7%" x="25%" y="40%"
+				backgroundImage="res/img/InfoPanelSchatten.png" childLayout="center"
+				visibleToMouse="true" visible="false">
+				<effect>
+					<onShow name="fade" length="400" start="#00" end="#ff"
+						targetElement="infoPanel" />
+					<onShow name="move" mode="in" direction="right" length="300"
+						startDelay="0" inherit="true" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="infoPanel" />
+					<onHide name="move" mode="out" direction="right" length="300"
+						startDelay="0" inherit="true" />
+				</effect>
+			</panel>
+			
+			<panel id="deko" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/DekoStudierenV2.png" childLayout="center" visible="true">
+			</panel>
+		</layer>
+	</screen>
+</nifty>

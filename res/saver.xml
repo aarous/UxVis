@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+	<useStyles filename="nifty-default-styles.xml" />
+	<useControls filename="nifty-default-controls.xml" />
+
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Screensaver -->
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<screen id="saver" controller="graphics.gui.InitScreen">
+		<layer id="hintergrundLayer" childLayout="center">
+			<panel id="hintergrund" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/screensaverBG.png" childLayout="center"
+				visible="true">
+			</panel>
+
+			<panel id="deko" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/screensaverVG.png" childLayout="center" visible="true">
+			</panel>
+			
+			<panel id="logo" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/screensaverText.png" childLayout="center" visible="true">
+			</panel>
+		</layer>
+
+		<layer id="menueActive" childLayout="absolute">
+			<panel id="menuePanel" height="110px" width="110px" x="458px"
+				y="665px" backgroundImage="res/img/leer.png" childLayout="center"
+				visibleToMouse="false" visible="false">
+			</panel>
+		</layer>
+
+		<layer id="coinPlaces" childLayout="center">	
+			<panel id="infoPanel" height="40%" width="40%"
+				backgroundImage="res/img/InfoPanelSchatten.png" childLayout="left"
+				visibleToMouse="true" visible="false">
+				<effect>
+					<onShow name="fade" length="400" start="#00" end="#ff"
+						targetElement="infoPanel" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="infoPanel" />
+				</effect>
+			</panel>
+		</layer>
+	</screen>
+
+</nifty>

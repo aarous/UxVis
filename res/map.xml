@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+	<useStyles filename="nifty-default-styles.xml" />
+	<useControls filename="nifty-default-controls.xml" />
+
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Map-Screen -->
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<screen id="map" controller="graphics.gui.InitScreen">
+		<layer id="hintergrundLayer" childLayout="center">
+
+			<panel id="hintergrund" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/Hintergrund.png" childLayout="center"
+				visible="true">
+			</panel>
+
+			<panel id="deko" height="768px" width="1024px" x="0" y="0"
+				backgroundImage="res/img/DekoMapV2.png" childLayout="center" visible="true">
+			</panel>
+
+			<panel id="karte" height="500px" width="400px" x="450" y="50"
+				backgroundImage="res/img/Map/HSHL_L_L3_EGblue.png" childLayout="center"
+				visible="true">
+				<effect>
+					<onShow name="fade" length="200" start="#00" end="#ff"
+						targetElement="karte" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="karte" />
+				</effect>
+			</panel>
+
+			<!-- +++++++++++++++++++++++++++++++++++++++ -->
+			<!-- Hier folgen die Räume ID=Raumname -->
+			<!-- +++++++++++++++++++++++++++++++++++++++ -->
+
+			<panel id="3dCluster" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/3dCluster.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="batRaum" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/BatRaum.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="buero" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/buero.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="bueros" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/Bueros.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="eingang" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/Eingang.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="elektroWerk" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/ElektroWerk.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="holzKunst" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/HolzKunst.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="koordMess" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/KoordMess.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="l1a3" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/L1a3.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="l1b1" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/L1b1.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="l1b2" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/L1b2.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="l5b" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/L5b.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="l6b" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/L6b.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="l6e" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/L6e.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="metBeh" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/MetBeh.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="oberflBeh" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/OberflBeh.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="seminar" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/Seminar.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="sl1b" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/SL1b.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="sl1d" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/SL1d.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="sl2a" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/SL2a.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="sl3b" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/SL3b.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="sl3c" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/SL3c.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="sl4b" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/SL4b.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="sl4d" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/SL4d.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="teekueche" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/teekueche.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="wc_dm" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/WC_DM.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="wc_md" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/WC_MD.png" visible="true"
+				childLayout="center">
+			</panel>
+			<panel id="wcBeh" height="500px" width="400px"
+				backgroundImage="res/img/Map/L3_EG/WCBeh.png" visible="true"
+				childLayout="center">
+			</panel>
+
+		</layer>
+
+		<layer id="menueActive" childLayout="absolute">
+			<panel id="menuePanel" height="78px" width="244px" x="388px"
+				y="625px" backgroundImage="res/img/MenueMapV1s.png" childLayout="center"
+				visibleToMouse="false" visible="true">
+				<effect>
+					<onShow name="fade" length="200" start="#00" end="#ff"
+						targetElement="menuePanel" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="menuePanel" />
+				</effect>
+			</panel>
+		</layer>
+
+		<layer id="coinPlaces" childLayout="absolute">
+			<panel id="menueCoin" height="80px" width="80px" x="473px" y="680px"
+				backgroundImage="res/img/leer.png" visible="true"
+				childLayout="center">
+			</panel>
+
+			<panel id="campusIcon" height="60px" width="120px" x="160px" y="50%"
+				backgroundImage="res/img/Map/CampusIcon.png" childLayout="left"
+				visibleToMouse="true" visible="true">
+				<effect>
+					<onShow name="fade" length="400" start="#00" end="#ff"
+						targetElement="infoPanel" />
+					<onShow name="move" mode="in" direction="right" length="300"
+						startDelay="0" inherit="true" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="infoPanel" />
+					<onHide name="move" mode="out" direction="right" length="300"
+						startDelay="0" inherit="true" />
+				</effect>
+			</panel>
+
+			<panel id="etagenSelector" height="80px" width="80px" x="750px"
+				y="50%" backgroundImage="res/img/Map/EtagenSelectorActive.png"
+				childLayout="left" visibleToMouse="true" visible="true">
+				<effect>
+					<onShow name="fade" length="400" start="#00" end="#ff"
+						targetElement="infoPanel" />
+					<onShow name="move" mode="in" direction="right" length="300"
+						startDelay="0" inherit="true" />
+					<onHide name="fade" length="200" start="#ff" end="#00"
+						targetElement="infoPanel" />
+					<onHide name="move" mode="out" direction="right" length="300"
+						startDelay="0" inherit="true" />
+				</effect>
+			</panel>
+		</layer>
+		<layer id="ttt" childLayout="absolute">
+			<panel id="TestCoin" height="10px" width="10px" x="275px" y="580px"
+				backgroundImage="res/img/TestCoin.png" visible="true" childLayout="center">
+			</panel>
+		</layer>
+	</screen>
+</nifty>
